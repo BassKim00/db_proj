@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin - Register</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="./static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="./static/css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-dark">
+
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <form action="" method="post">
+          {{ form.hidden_tag() }}
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                ID
+                  {{ form.user_id(class="form-control", id="user_id", autofocus="") }}
+                    {% for error in form.user_id.errors %}
+                        <span style="color : red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                PASSWORD
+                  {{ form.password1(class="form-control", id="password1") }}
+                    {% for error in form.password1.errors %}
+                        <span style="color : red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                PASSWORD CONFIRM
+                  {{ form.password2(class="form-control", id="password2") }}
+                    {% for error in form.password2.errors %}
+                        <span style="color : red;">[{{ error }}]</span>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+            E-MAIL
+              {{ form.email(class="form-control", id="email") }}
+                {% for error in form.email.errors %}
+                    <span style="color : red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+            PHONE
+              {{ form.phone(class="form-control", id="phone") }}
+                {% for error in form.phone.errors %}
+                    <span style="color : red;">[{{ error }}]</span>
+                {% endfor %}
+            </div>
+          </div>
+
+          {{ form.submit(class="btn btn-primary btn-block") }}
+        </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="{{ url_for('login') }}">Login Page</a>
+          <a class="d-block small" href="{{ url_for('forgot') }}">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="./static/vendor/jquery/jquery.min.js"></script>
+  <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="./static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+</body>
+
+</html>
